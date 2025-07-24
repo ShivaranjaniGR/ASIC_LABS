@@ -88,7 +88,8 @@ For the design of Full adder using 2 half adders , at 180nm the following result
 
 For the design of full adder in data flow modelling, at 180nm the following results were observed.
 
-<img width="1161" height="302" alt="image" src="https://github.com/user-attachments/assets/4fb41054-67b7-42fd-9053-6ea2b6d0d9f6" />
+<img width="1098" height="326" alt="image" src="https://github.com/user-attachments/assets/bcc91b63-b948-494c-90f3-61159b8482a8" />
+
 
 ----
 
