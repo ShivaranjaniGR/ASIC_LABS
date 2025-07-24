@@ -1,3 +1,4 @@
+//SUBMODULE HALF ADDER FOR FULL ADDER USING 2 HALF ADDERS
 module half_adder (
     input wire a,
     input wire b,
