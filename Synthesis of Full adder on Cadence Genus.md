@@ -50,7 +50,7 @@ In ASIC flows, PVT corner libraries contain timing, power, and noise models for 
    <img width="757" height="110" alt="Screenshot from 2025-07-24 14-34-10" src="https://github.com/user-attachments/assets/29f43075-4413-4cdf-93bb-0c7eb4337068" />
    <img width="1262" height="758" alt="Screenshot from 2025-07-24 14-35-10" src="https://github.com/user-attachments/assets/ba9416df-bf4b-486c-94c2-477bc3a9eab9" />
    <p align="center">fig: Technology dependent Synthesis Schematic</p>
-7. Use the syn_map command to do synthesis using the library we have chosen - Technology dependent Synthesis.
+7. Use the syn_map command to do synthesis using the chosen library - Technology dependent Synthesis.
    <img width="912" height="198" alt="Screenshot from 2025-07-24 14-40-43" src="https://github.com/user-attachments/assets/e1934611-db7e-4062-a745-d15bc8cf22bc" />
 8. View the Timing report
    
@@ -76,7 +76,7 @@ POWER : LEAKAGE POWER, INTERNAL POWER, SWITCHING POWER, TOTAL POWER
 
 AREA : CELL AREA, GATE EQUIVALENT AREA
 
-## RESULTS
+## RESULTS :
 
 For the design of Full adder using 2 half adders , at 180nm the following results were observed.
 
@@ -89,6 +89,14 @@ For the design of Full adder using 2 half adders , at 180nm the following result
 For the design of full adder in data flow modelling, at 180nm the following results were observed.
 
 <img width="1161" height="302" alt="image" src="https://github.com/user-attachments/assets/4fb41054-67b7-42fd-9053-6ea2b6d0d9f6" />
+
+----
+
+# INFERENCES :
+- Slack decreases as operating frequency of design increases.
+- leakage power is independent of clock frequency but depends on the PVT corners. Leakage power depends on PVT (Process, Voltage, Temperature) corners because faster transistors (fast corner) have lower threshold voltages and leak more, while slower transistors (slow corner) have higher threshold voltages and leak less; temperature and voltage also amplify this effect.
+- Across all operating frequencies and PVT corners, the total power is more in the full adder using 2 full adders compared to Behavioural modelling.as it has more logic gates and transitions, leading to higher switching and internal power than the optimized behavioral model.
+- Leakage Power is higher at fast corners and will differ between architectures depending on gate count and technology cells used.
 
 
 
