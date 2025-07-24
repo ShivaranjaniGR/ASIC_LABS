@@ -5,11 +5,8 @@
     - Full Adder using 2 Half Adders (Structural Modelling)
     - Full Adder in data flow modelling
     - Full Adder in Behavioural modelling
-- Compare different technologies using libraries for
-    - 180nm
-    - 90nm
-    - 45nm
-- Compare different Corners using libraries for
+- Compare different clock frequencies of operation.
+- Compare different Corners using 180nm Technology libraries for
     - Slow corner
     - fast corner
     - Typical corner
@@ -36,17 +33,26 @@
    
    <img width="912" height="198" alt="Screenshot from 2025-07-24 14-40-43" src="https://github.com/user-attachments/assets/9479ab93-b4d5-4e9b-9422-9910f95a42e1" />
    
-10. View the Power report
+9. View the Power report
     
    <img width="758" height="807" alt="Screenshot from 2025-07-24 14-43-32" src="https://github.com/user-attachments/assets/6205ccf7-36ad-40fc-bef4-ddc3e1e55322" />
    
-11. View the Area report
+10. View the Area report
     
     <img width="714" height="280" alt="Screenshot from 2025-07-24 14-44-14" src="https://github.com/user-attachments/assets/bfb73a07-7cd4-40b6-8b27-112b82105990" />
 
-12. Capture the Schematic after technology dependent Synthesis.
+11. Capture the Schematic after technology dependent Synthesis.
     <img width="1220" height="647" alt="Screenshot from 2025-07-24 14-46-17" src="https://github.com/user-attachments/assets/17fc5178-cb15-45d7-a00e-f2a276deb40b" />
     fig: Technology dependent Synthesis Schematic
+
+## METRICS OF INTEREST
+TIMING : CLOCK FREQUENCY, SLACK
+
+POWER : LEAKAGE POWER, INTERNAL POWER, SWITCHING POWER, TOTAL POWER
+
+AREA : CELL AREA, GATE EQUIVALENT AREA
+
+## RESULTS
 
 
 
