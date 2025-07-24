@@ -49,7 +49,7 @@ In ASIC flows, PVT corner libraries contain timing, power, and noise models for 
    <img width="910" height="161" alt="Screenshot from 2025-07-24 14-33-49" src="https://github.com/user-attachments/assets/888c7250-9066-4bc6-87e2-f74c6ade2904" />
    <img width="757" height="110" alt="Screenshot from 2025-07-24 14-34-10" src="https://github.com/user-attachments/assets/29f43075-4413-4cdf-93bb-0c7eb4337068" />
    <img width="1262" height="758" alt="Screenshot from 2025-07-24 14-35-10" src="https://github.com/user-attachments/assets/ba9416df-bf4b-486c-94c2-477bc3a9eab9" />
-   <p align="center">fig: Technology dependent Synthesis Schematic</p>
+   <p align="center">fig: Technology independent Synthesis Schematic</p>
 7. Use the syn_map command to do synthesis using the chosen library - Technology dependent Synthesis.
    <img width="912" height="198" alt="Screenshot from 2025-07-24 14-40-43" src="https://github.com/user-attachments/assets/e1934611-db7e-4062-a745-d15bc8cf22bc" />
 8. View the Timing report
