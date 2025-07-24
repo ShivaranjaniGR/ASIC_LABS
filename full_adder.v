@@ -1,4 +1,4 @@
-
+// FULL ADDER USING 2 HALF ADDERS
 module full_adder (
     input wire clk,
     input wire rst,
