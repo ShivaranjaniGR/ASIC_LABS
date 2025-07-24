@@ -4,7 +4,6 @@
 - Compare different designs
     - Full Adder using 2 Half Adders (Structural Modelling)
     - Full Adder in data flow modelling
-    - Full Adder in Behavioural modelling
 - Compare different clock frequencies of operation.
 - Compare different Corners using 180nm Technology libraries for
     - Slow corner
@@ -12,11 +11,29 @@
     - Typical corner
 - Report Timing, Area and Power for the comparison.
  ## Theory
-for 180nm, area of 2x1 nand gate - area : 9.979200;
+ ### Power, Speed and Area :
+- for 180nm, area of 2x1 nand gate - area : 9.979200;
 
 <img width="279" height="138" alt="Screenshot from 2025-07-24 15-36-28" src="https://github.com/user-attachments/assets/010a2acf-02f1-46c5-89da-57b9d45e6333" />
 
 therefore, Gate Equivalent area = Total Area/9.979200
+
+- During synthesis, power is estimated without real switching activity, using default toggle rates. (1 toggle per cycle). Therefore, Internal and switching power are approximated based on assumed input activity. However, Leakage power is computed accurately from the standard cell library and PVT conditions.
+These estimates help guide early design choices.
+
+-Negative slack occurs when data takes too long to propagate and misses the clock deadline. Increasing the clock frequency reduces the available time per cycle, often causing more negative slack if the logic isn't optimized.
+
+##% PVT Corner Libraries :
+In ASIC flows, PVT corner libraries contain timing, power, and noise models for each standard cell under different operating conditions.
+
+| Corner Type | Library Name              | TransistorSpeed(Process)| Voltage | Temperature | Purpose                                   |
+| ----------- | ------------------------- | ----------------------- | ------- | ----------- | ----------------------------------------- |
+| **Typical** | `typical.lib` or `tt.lib` | Nominal                 | Nominal | 25°C (e.g.) | **Design, synthesis, and functional sim** |
+| **Slow**    | `slow.lib` or `ss.lib`    | Slower (weak process)   | Lower   | Higher temp | Worst-case **setup** timing check         |
+| **Fast**    | `fast.lib` or `ff.lib`    | Faster (strong process) | Higher  | Lower temp  | Worst-case **hold** timing check          |
+
+
+
  
 ## Tool flow :
 1. Create a folder with verilog files (.v files) and the timing constraints file (.g/.sdc).
@@ -32,7 +49,7 @@ therefore, Gate Equivalent area = Total Area/9.979200
    <img width="910" height="161" alt="Screenshot from 2025-07-24 14-33-49" src="https://github.com/user-attachments/assets/888c7250-9066-4bc6-87e2-f74c6ade2904" />
    <img width="757" height="110" alt="Screenshot from 2025-07-24 14-34-10" src="https://github.com/user-attachments/assets/29f43075-4413-4cdf-93bb-0c7eb4337068" />
    <img width="1262" height="758" alt="Screenshot from 2025-07-24 14-35-10" src="https://github.com/user-attachments/assets/ba9416df-bf4b-486c-94c2-477bc3a9eab9" />
-   fig: Technology Independent Synthesis Schematic
+   <p align="center">fig: Technology dependent Synthesis Schematic</p>
 7. Use the syn_map command to do synthesis using the library we have chosen - Technology dependent Synthesis.
    <img width="912" height="198" alt="Screenshot from 2025-07-24 14-40-43" src="https://github.com/user-attachments/assets/e1934611-db7e-4062-a745-d15bc8cf22bc" />
 8. View the Timing report
@@ -49,7 +66,8 @@ therefore, Gate Equivalent area = Total Area/9.979200
 
 11. Capture the Schematic after technology dependent Synthesis.
     <img width="1220" height="647" alt="Screenshot from 2025-07-24 14-46-17" src="https://github.com/user-attachments/assets/17fc5178-cb15-45d7-a00e-f2a276deb40b" />
-    fig: Technology dependent Synthesis Schematic
+    <p align="center">fig: Technology dependent Synthesis Schematic</p>
+
 
 ## METRICS OF INTEREST
 TIMING : CLOCK FREQUENCY, SLACK
@@ -59,6 +77,18 @@ POWER : LEAKAGE POWER, INTERNAL POWER, SWITCHING POWER, TOTAL POWER
 AREA : CELL AREA, GATE EQUIVALENT AREA
 
 ## RESULTS
+
+For the design of Full adder using 2 half adders , at 180nm the following results were observed.
+
+<img width="1156" height="293" alt="image" src="https://github.com/user-attachments/assets/958051ea-906d-46c6-97d0-411cd4883d35" />
+
+
+----
+
+
+For the design of full adder in data flow modelling, at 180nm the following results were observed.
+
+<img width="1161" height="302" alt="image" src="https://github.com/user-attachments/assets/4fb41054-67b7-42fd-9053-6ea2b6d0d9f6" />
 
 
 
