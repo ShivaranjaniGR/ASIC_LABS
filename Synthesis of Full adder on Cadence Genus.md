@@ -11,7 +11,12 @@
     - fast corner
     - Typical corner
 - Report Timing, Area and Power for the comparison.
+ ## Theory
+for 180nm, area of 2x1 nand gate - area : 9.979200;
+<img width="279" height="138" alt="Screenshot from 2025-07-24 15-36-28" src="https://github.com/user-attachments/assets/010a2acf-02f1-46c5-89da-57b9d45e6333" />
 
+therefore, Gate Equivalent area = Total Area/9.979200
+ 
 ## Tool flow :
 1. Create a folder with verilog files (.v files) and the timing constraints file (.g/.sdc).
 2. Open the terminal for working directory and enter the following commands.
