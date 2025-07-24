@@ -1,4 +1,4 @@
-module fa_asic3(cout,s,a,b,c,clk);
+module fa_behavioural(cout,s,a,b,c,clk);
 input a,b,c,clk;
 output reg cout,s;
 reg a_1,b_1,c_in;
