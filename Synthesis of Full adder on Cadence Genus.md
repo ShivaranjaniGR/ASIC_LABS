@@ -105,10 +105,15 @@ For the design of full adder in data flow modelling, at 180nm the following resu
    
 
    
+### (area of behavioural and using half adders - same)
+### (area of data flow ->335.966)
 
 
 
-   
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4b89f5ad-5f73-4db2-a762-40be7c8536fd" />
+
+fig: data flow full adder
 
 
     
