@@ -113,7 +113,7 @@ For the design of full adder in data flow modelling, at 180nm the following resu
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4b89f5ad-5f73-4db2-a762-40be7c8536fd" />
 
-fig: dafull adder
+fig: behavioral - full adder
 
 
     
