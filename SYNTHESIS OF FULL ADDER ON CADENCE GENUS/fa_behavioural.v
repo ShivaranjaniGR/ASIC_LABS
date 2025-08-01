@@ -1,3 +1,4 @@
+// behavioural modelling
 module fa_behavioural (
     input wire clk,
     input wire rst,
