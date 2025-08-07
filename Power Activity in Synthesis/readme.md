@@ -41,6 +41,9 @@ Fig: Instance of a .vcd file generated post simulation
 
 ## Results :
 
+<img width="533" height="109" alt="Screenshot from 2025-08-07 15-20-08" src="https://github.com/user-attachments/assets/975eb5a2-44ae-4bf0-9dac-7d7ffd8fc182" />
+
+
 
 
 
