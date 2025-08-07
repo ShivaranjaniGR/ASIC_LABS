@@ -39,11 +39,19 @@ In summary, power estimation during simulation is sensitive to how closely the t
 
 Fig: Instance of a .vcd file generated post simulation
 
-## Results :
+## Observations :
 
 <img width="533" height="109" alt="Screenshot from 2025-08-07 15-20-08" src="https://github.com/user-attachments/assets/975eb5a2-44ae-4bf0-9dac-7d7ffd8fc182" />
 
+## Inference :
 
+- Inferences from the data show that Leakage Power is constant, as it's static. Increasing the clock toggling rate from 5 to 1 time unit (Testbenches 1 vs 2, or 4 vs 5) dramatically increases Internal and Switching Power.
+
+- Using fewer input combinations (Testbench 3 vs 1) slightly reduces power.
+
+- Switching to a Gray Coded input sequence (Testbench 4 vs 1, or 5 vs 2) also yields a minor reduction in dynamic power due to fewer bit transitions. 
+
+- Overall, dynamic power is most sensitive to the clock rate, followed by the input encoding and number of combinations.
 
 
 
