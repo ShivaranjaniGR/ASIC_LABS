@@ -1,1 +1,27 @@
+# SWITCHING ACTIVITY ANALYSIS IN SYNTHESIS 
+## Introduction :
 
+In digital design synthesis, power activity estimation plays a crucial role in understanding how much dynamic power a circuit will consume during operation. This estimation is typically based on the switching activity of the signals in the design, which reflects how frequently signals toggle between logic states. When synthesizing without a testbench or real input stimuli, the synthesis tool relies on a default toggling rate to approximate signal activity. 
+
+Most tools assume a default toggling rate of 12.5% (i.e., a signal toggles once every 8 clock cycles) and a 50% static probability (equal chance of being 0 or 1). These assumptions help provide a rough estimate of dynamic power consumption. However, actual power usage can significantly deviate from this default if realistic switching data is not used. Therefore, for accurate power analysis, post-synthesis simulations with real input stimuli are essential.
+
+In a testbench -based power analysis, several factors influence the accuracy and magnitude of the estimated power. Each plays a role in determining the switching activity, which directly affects dynamic power consumption. Here are the key effects:
+
+- Toggling Rate: Higher toggling (switching) rates increase dynamic power because more charging and discharging of load capacitances occur. Lines that toggle more frequently dissipate more power.
+
+- Number of Stimuli: A greater number of realistic and diverse input stimuli allows for more comprehensive signal coverage, revealing hotspots and active paths that might be missed with limited inputs, thus improving power estimation accuracy.
+
+- Corner Analysis (Process-Voltage-Temperature - PVT Corners): Different corners (e.g., TT, SS, FF) affect transistor speed and leakage. For instance, at high temperature and low voltage (slow-slow corner), leakage increases, while fast corners may lead to more dynamic switching.
+
+- Input Signal Correlation: If testbench inputs are highly correlated (e.g., switching together), they may reduce overall toggling in combinational logic. Random or decorrelated inputs may cause higher toggling and dynamic power.
+
+- Clock Frequency: Higher clock rates increase power as switching happens more often per unit time. A testbench running at a higher clock shows more dynamic activity per second.
+
+- Simulation Duration and Coverage: Longer and more diverse simulation cycles capture a wider range of circuit behavior. This ensures toggling data across various operational modes, improving overall power prediction.
+
+In summary, power estimation during simulation is sensitive to how closely the testbench mimics real-world conditions. Accurate testbench design leads to more reliable power analysis.
+
+----
+
+## Testbenches under consideration -
+1. 
