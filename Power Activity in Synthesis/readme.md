@@ -26,7 +26,9 @@ In summary, power estimation during simulation is sensitive to how closely the t
 ## Testbenches under consideration -
 1. Testbench 1 -> All 8 input combinations in increasing order, clock toggles every 5 time units.
 2. Testbench 2 -> All 8 input combinations in increasing order, clock toggles every 1 time unit (higher toggling rate).
-3. Testbench 1 -> Only 4 input combinations in increasing order, clock toggles every 5 time units.
-4. Testbench 1 -> All 8 input combinations in increasing order, clock toggles every 5 time units.
+3. Testbench 3 -> Only 4 input combinations in increasing order, clock toggles every 5 time units.
+4. Testbench 4 -> All 8 input combinations are Gray Coded, clock toggles every 5 time units.
+5. Testbench 4 -> All 8 input combinations are Gray Coded, clock toggles every 1 time units (higher toggling rate).
+6. 
 
    
