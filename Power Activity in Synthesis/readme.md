@@ -5,6 +5,7 @@ In digital design synthesis, power activity estimation plays a crucial role in u
 
 Most tools assume a default toggling rate of 12.5% (i.e., a signal toggles once every 8 clock cycles) and a 50% static probability (equal chance of being 0 or 1). These assumptions help provide a rough estimate of dynamic power consumption. However, actual power usage can significantly deviate from this default if realistic switching data is not used. Therefore, for accurate power analysis, post-synthesis simulations with real input stimuli are essential.
 
+## Theory:
 In a testbench -based power analysis, several factors influence the accuracy and magnitude of the estimated power. Each plays a role in determining the switching activity, which directly affects dynamic power consumption. Here are the key effects:
 
 - Toggling Rate: Higher toggling (switching) rates increase dynamic power because more charging and discharging of load capacitances occur. Lines that toggle more frequently dissipate more power.
@@ -23,12 +24,27 @@ In summary, power estimation during simulation is sensitive to how closely the t
 
 ----
 
-## Testbenches under consideration -
+## Testbenches under consideration for the DUT (FullAdder) :
 1. Testbench 1 -> All 8 input combinations in increasing order, clock toggles every 5 time units.
 2. Testbench 2 -> All 8 input combinations in increasing order, clock toggles every 1 time unit (higher toggling rate).
 3. Testbench 3 -> Only 4 input combinations in increasing order, clock toggles every 5 time units.
 4. Testbench 4 -> All 8 input combinations are Gray Coded, clock toggles every 5 time units.
 5. Testbench 4 -> All 8 input combinations are Gray Coded, clock toggles every 1 time units (higher toggling rate).
-6. 
+
+## Procedure 
+- generate .vcd file during simulation using the testbench.
+- After the read_hdl command, include the read_vcd command with the relevant vcd during synthesis.
+<img width="567" height="320" alt="Screenshot from 2025-08-07 14-59-03" src="https://github.com/user-attachments/assets/7d0360a6-ed1d-444f-a395-c09b57053370" />
+
+
+Fig: Instance of a .vcd file generated post simulation
+
+## Results :
+
+
+
+
+
+
 
    
