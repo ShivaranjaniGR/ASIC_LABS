@@ -1,20 +1,12 @@
-## Design and Synthesis of a Complex Multiplier
+## Complex Multiplier : Design, Synthesis and Post Synthesis Simulation.
 
 # Aim: 
 
-Develop a datapath to perform a complex multiplication of two complex numbers. The operands and product are all in Cartesian form.
-The real and imaginary parts of the operands are represented as signed fixedpoint numbers with 4 pre-binary-point and 12 post-binary-point bits. The real
-and imaginary parts of the product are similarly represented, but with 8 prebinary-point and 24 post-binary-point bits. The complex multiplier is subject to
-constraints that strongly limit the circuit area.
+- Develop a datapath to perform a complex multiplication of two complex numbers. The operands are 4 bit unsigned numbers. The real and imaginary parts of the multiplication are represented as 8 bit signed numbers (subtraction for real part of the product). We intend to minimise the area of the design.
+- Develop a Control Module with an FSM to generate the control signals to feed to the Data path for correct excecution.
+- Integrate the Data path and Control module in a Top Module, and verify its functionality.
 
 -------
-
-# Background check in pen and paper:
-
-<img width="872" height="766" alt="image" src="https://github.com/user-attachments/assets/8973ef38-aa7b-4acc-b2a5-573d86144df9" />
-
-----------
-
 
 # Architecture of Choice :
 
@@ -26,7 +18,4 @@ Since we need to limit area, We use a single multiplier and a single adder. We a
 
 ---------
 
-# RTL :
-
- - behavioral modeling for sequential logic
- - dataflow modeling for combinational logic.
+## Functional Verification
