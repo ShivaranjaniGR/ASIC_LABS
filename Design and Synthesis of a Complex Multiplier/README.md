@@ -63,6 +63,18 @@ Test case 5: (2 + 1i) * (1 + 7i) = -5 + 15i
 
 
 ### Schematic -
+
+#### Data path -
+<img width="1920" height="917" alt="image" src="https://github.com/user-attachments/assets/0cb1b8a0-02f1-4110-9857-8944bf2b1673" />
+
+----
+
+#### Control path -
+<img width="1920" height="841" alt="image" src="https://github.com/user-attachments/assets/58f46b86-d5cd-43d1-84cc-e5816f3065a2" />
+
+
+#### Top module -
+
 <img width="1916" height="952" alt="image" src="https://github.com/user-attachments/assets/2d1620ea-46ea-499c-8612-c5b9082fcfce" />
 
 ------------
