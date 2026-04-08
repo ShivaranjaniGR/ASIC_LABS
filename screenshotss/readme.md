@@ -11,3 +11,11 @@
 
 
 <img width="669" height="708" alt="image" src="https://github.com/user-attachments/assets/c09596d5-b48e-46c5-94fa-f19cfa8492bd" />
+
+
+--------- POST CONFIG----------
+
+<img width="959" height="1017" alt="image" src="https://github.com/user-attachments/assets/84862e00-70c6-4bb1-8b0c-753d230974cb" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f27fab1a-2b63-464a-b1f3-6c2482768f07" />
