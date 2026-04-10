@@ -50,20 +50,20 @@ ___________POWER PLANNING__________--
 
 
 
-<img width="599" height="513" alt="image" src="https://github.com/user-attachments/assets/ffb5cc94-3c36-42f6-abdb-8ddd43c6fefb" />
+<img width="604" height="528" alt="image" src="https://github.com/user-attachments/assets/1590987f-3940-4429-a0d3-e6bb9f025c85" />
 
 
-
-<img width="959" height="1013" alt="image" src="https://github.com/user-attachments/assets/e6124334-6072-47bb-b388-7fa98c45dc76" />
-
-
-stripes - 
-<img width="572" height="487" alt="image" src="https://github.com/user-attachments/assets/cb70014c-b31e-435f-bbde-ab9ee0d5c3d8" />
+<img width="608" height="675" alt="image" src="https://github.com/user-attachments/assets/ba00d38a-f70e-4835-abb3-d6df3048f661" />
 
 
+<img width="958" height="1016" alt="image" src="https://github.com/user-attachments/assets/a7366ab9-c012-404f-8eec-b4c980086ea8" />
 
 
-<img width="544" height="639" alt="image" src="https://github.com/user-attachments/assets/8b737151-bfb3-4322-9068-951356ba8856" />
+Sroute - 
+<img width="554" height="643" alt="image" src="https://github.com/user-attachments/assets/d722490e-227e-4cc1-a638-a77c4102d9ba" />
 
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f43f74ff-8032-4fef-9b65-ad8b8781b90f" />
 
+congestion effort for placement - high
+<img width="674" height="567" alt="image" src="https://github.com/user-attachments/assets/ef1b6048-9cd1-429e-bdda-c3f726bef746" />
