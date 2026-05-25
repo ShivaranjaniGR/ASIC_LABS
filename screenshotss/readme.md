@@ -82,6 +82,18 @@ CTS
 
 <img width="1064" height="638" alt="image" src="https://github.com/user-attachments/assets/b123e827-5872-46ae-9722-e1fe8fd74dfb" />
 ----------------
+POST CTS TIMING - 
+SETUP
+<img width="842" height="583" alt="image" src="https://github.com/user-attachments/assets/d2b897ec-590d-440d-9be9-2a9c17f2739b" />
+<img width="1186" height="668" alt="image" src="https://github.com/user-attachments/assets/03d16b0d-4422-4288-9f05-9981df3b4558" />
+
+HOLD -
+<img width="1230" height="467" alt="image" src="https://github.com/user-attachments/assets/21c3556d-8c12-494e-bec6-959fee737ab6" />
+
+<img width="436" height="334" alt="image" src="https://github.com/user-attachments/assets/3ba39c27-6e23-440d-956c-b583f20325ea" />
+
+POST CTS HOLD TIME OPTIMATISION LEADS TO ELIMINATION OF HOLD VIOLATIONS -
+<img width="675" height="473" alt="image" src="https://github.com/user-attachments/assets/6d2274d8-e47a-4b17-af03-3ab44c34101d" />
 
 
 
