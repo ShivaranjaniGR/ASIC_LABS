@@ -95,5 +95,23 @@ HOLD -
 POST CTS HOLD TIME OPTIMATISION LEADS TO ELIMINATION OF HOLD VIOLATIONS -
 <img width="675" height="473" alt="image" src="https://github.com/user-attachments/assets/6d2274d8-e47a-4b17-af03-3ab44c34101d" />
 
+------------
+ROUTING 
+<img width="586" height="644" alt="image" src="https://github.com/user-attachments/assets/19aa32bb-b5f4-47f2-a233-3048efd61048" />
+<img width="811" height="141" alt="image" src="https://github.com/user-attachments/assets/67f9b71b-5c91-47b7-ac84-dda1a01863d5" />
 
+<img width="663" height="316" alt="image" src="https://github.com/user-attachments/assets/ea0d1118-7468-46e8-8855-fe8e020de21f" />
+ post routing sta
+ setup -
+ <img width="717" height="675" alt="image" src="https://github.com/user-attachments/assets/b8392331-6198-4238-a2c6-bdf64a28b3c3" />
+ hold - violation
+ <img width="950" height="475" alt="image" src="https://github.com/user-attachments/assets/8f1a186f-ff4f-4786-b782-4ba2a61276ad" />
+ opt design post routing, new hold -
+ <img width="687" height="476" alt="image" src="https://github.com/user-attachments/assets/891684b1-d11c-45ac-846e-62e725f81949" />
+
+---------------
+adding filler cells -
+<img width="370" height="285" alt="image" src="https://github.com/user-attachments/assets/b2c75d48-9ecb-47bf-ae01-48495fb81b9a" />
+
+<img width="669" height="118" alt="image" src="https://github.com/user-attachments/assets/3e1be856-01b6-405f-9a1e-d5b918f14588" />
 
