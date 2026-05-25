@@ -115,3 +115,20 @@ adding filler cells -
 
 <img width="669" height="118" alt="image" src="https://github.com/user-attachments/assets/3e1be856-01b6-405f-9a1e-d5b918f14588" />
 
+
+
+---------------------
+LEC & GLS 
+---------------
+
+SIGNOFF -
+RC EXTRACTION 
+<img width="373" height="183" alt="image" src="https://github.com/user-attachments/assets/7019c866-c9be-4cb5-b761-3a09f6ef9953" />
+<img width="540" height="896" alt="image" src="https://github.com/user-attachments/assets/5b593e1f-f60b-42a2-be17-179a7594fa55" />
+
+
+connectivity -
+<img width="546" height="357" alt="image" src="https://github.com/user-attachments/assets/66eaaa83-55b4-4cf9-ab2b-882dec85ec60" />
+
+DRC-
+<img width="736" height="293" alt="image" src="https://github.com/user-attachments/assets/0f40f5ee-65ec-4c99-9688-18dc5f7da04a" />
