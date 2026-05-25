@@ -132,3 +132,14 @@ connectivity -
 
 DRC-
 <img width="736" height="293" alt="image" src="https://github.com/user-attachments/assets/0f40f5ee-65ec-4c99-9688-18dc5f7da04a" />
+<img width="503" height="836" alt="image" src="https://github.com/user-attachments/assets/73086e8d-717b-4ef8-af63-24b5a06e16d9" />
+
+
+fixing - 
+<img width="692" height="429" alt="image" src="https://github.com/user-attachments/assets/62296861-4d29-4744-81a5-ba36a29231aa" />
+
+<img width="712" height="188" alt="image" src="https://github.com/user-attachments/assets/ca0b01d0-f219-4896-b570-fa27e657ebb0" />
+
+reduced the total violations down from 423 to 121, completely wiping out all 243 SameNet spacing issues.
+
+The original explosion of DRC errors was caused by a critical floorplanning misalignment where your massive I/O pad macro cells were floating directly inside the central core area, forcing the router to illegally run normal signal traces right over their large, vertical Metal 1 (M1) pins. To fix this, we identified the exact structural instance names recognized by your active design netlist and mapped them into a customized .io assignment file. By unplacing the database and executing a fresh loadIoFile, we successfully forced Innovus to kick those bulky pads out of the standard cell logic region and snap them into a clean peripheral ring around the chip's outer boundaries. This completely opened up the routing channels in the core, leaving you with just 121 remaining M1 shorts that NanoRoute can easily clean up using an ECO route pass (setNanoRouteMode -routeWithEco true; detailRoute -fix_drc).
