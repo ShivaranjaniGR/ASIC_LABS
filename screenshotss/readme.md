@@ -67,3 +67,21 @@ Sroute -
 
 congestion effort for placement - high
 <img width="674" height="567" alt="image" src="https://github.com/user-attachments/assets/ef1b6048-9cd1-429e-bdda-c3f726bef746" />
+
+post placement - 
+<img width="875" height="776" alt="image" src="https://github.com/user-attachments/assets/0200ccbf-0601-4c7f-9d34-45ed958f228c" />
+
+pre cts timing -
+<img width="882" height="626" alt="image" src="https://github.com/user-attachments/assets/8a1ae793-9ed3-4f66-b5a7-f73c30396323" />
+after design optimisation -
+
+<img width="864" height="606" alt="image" src="https://github.com/user-attachments/assets/41232954-e78c-48c6-a66a-02a6fdc63417" />
+
+------
+CTS
+
+<img width="1064" height="638" alt="image" src="https://github.com/user-attachments/assets/b123e827-5872-46ae-9722-e1fe8fd74dfb" />
+----------------
+
+
+
