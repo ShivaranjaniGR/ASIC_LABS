@@ -133,13 +133,114 @@ connectivity -
 DRC-
 <img width="736" height="293" alt="image" src="https://github.com/user-attachments/assets/0f40f5ee-65ec-4c99-9688-18dc5f7da04a" />
 <img width="503" height="836" alt="image" src="https://github.com/user-attachments/assets/73086e8d-717b-4ef8-af63-24b5a06e16d9" />
+-----------------------
+fix -
+
+Based on the provided Cadence Innovus report, you have **213 Metal Short violations** occurring exclusively on the **M1 layer**.
+
+---
+
+## 🔍 Root Cause Analysis
+
+Look closely at the **Bounds** of the violations:
+
+* **X-coordinates:** Always span from `374.88` to `1564.88` (a huge horizontal distance of 1190 $\mu$m).
+* **Y-coordinates:** Have a very narrow height (around 1.48 $\mu$m).
+
+This massive, layout-wide horizontal profile indicates that your **Power/Ground (PG) follow-pins (routing rails)** on M1 are physically overlapping the VDD/VSS pins inside your filler cells (`FILLER_T_*`) and certain ECO/instantiated cells (`FE_OFC_*`), but the tool thinks they are a **Short** instead of a valid connection.
+
+This is a classic symptom of a **Logical vs. Physical connectivity mismatch**. Innovus is flagging a short because the VDD/VSS pins of these filler cells have not been logically tied to the `VDD_CORE` and `VSS_CORE` nets. Since the tool thinks the filler cell pins are "unconnected" or "floating," running a physical wire over them triggers a DRC short.
+
+---
+
+## 🛠️ How to Fix It
+
+To resolve these violations, you need to establish global net connections for your filler cells before running your DRC verification. Follow these steps in your Innovus console:
+
+### 1. Re-apply Global Net Connections
+
+Ensure that all standard cells and filler cells are logically tied to your power and ground nets. Run the following commands:
+
+```tcl
+# Connect VDD pins
+globalNetConnect VDD_CORE -type pgpin -pin VDD -inst * -override -verbose
+globalNetConnect VDD_CORE -type pgpin -pin vdd -inst * -override -verbose
+
+# Connect VSS pins
+globalNetConnect VSS_CORE -type pgpin -pin VSS -inst * -override -verbose
+globalNetConnect VSS_CORE -type pgpin -pin vss -inst * -override -verbose
+
+```
+
+> 💡 *Note: Check your library's LEF file to see if the power/ground pins are uppercase (`VDD`/`VSS`) or lowercase (`vdd`/`vss`), and adapt the pin name accordingly.*
+
+### 2. Re-route or Refine Power Structure (If Needed)
+
+If you recently added filler cells *after* doing your special routing (`sroute`), the logical connectivity might not have been inherited correctly. After running the `globalNetConnect` commands above, clear any existing geometry status and clear the DRCs:
+
+```tcl
+# Clear existing violation markers
+clearDrc
+
+```
+
+### 3. Verify Geometry Again
+
+Run your geometry check again to see if the shorts disappear:
+
+```tcl
+verifyGeometry -all
+# Or if you are using newer Innovus versions:
+verify_drc
+
+```
+
+If the `globalNetConnect` command was the culprit, your violation count should drop to 0.    Y-coordinates: Have a very narrow height (around 1.48 μm).
+
+This massive, layout-wide horizontal profile indicates that your Power/Ground (PG) follow-pins (routing rails) on M1 are physically overlapping the VDD/VSS pins inside your filler cells (FILLER_T_*) and certain ECO/instantiated cells (FE_OFC_*), but the tool thinks they are a Short instead of a valid connection.
+
+This is a classic symptom of a Logical vs. Physical connectivity mismatch. Innovus is flagging a short because the VDD/VSS pins of these filler cells have not been logically tied to the VDD_CORE and VSS_CORE nets. Since the tool thinks the filler cell pins are "unconnected" or "floating," running a physical wire over them triggers a DRC short.
+🛠️ How to Fix It
+
+To resolve these violations, you need to establish global net connections for your filler cells before running your DRC verification. Follow these steps in your Innovus console:
+1. Re-apply Global Net Connections
+
+Ensure that all standard cells and filler cells are logically tied to your power and ground nets. Run the following commands:
+Tcl
+
+# Connect VDD pins
+globalNetConnect VDD_CORE -type pgpin -pin VDD -inst * -override -verbose
+globalNetConnect VDD_CORE -type pgpin -pin vdd -inst * -override -verbose
+
+# Connect VSS pins
+globalNetConnect VSS_CORE -type pgpin -pin VSS -inst * -override -verbose
+globalNetConnect VSS_CORE -type pgpin -pin vss -inst * -override -verbose
+
+    💡 Note: Check your library's LEF file to see if the power/ground pins are uppercase (VDD/VSS) or lowercase (vdd/vss), and adapt the pin name accordingly.
+
+2. Re-route or Refine Power Structure (If Needed)
+
+If you recently added filler cells after doing your special routing (sroute), the logical connectivity might not have been inherited correctly. After running the globalNetConnect commands above, clear any existing geometry status and clear the DRCs:
+Tcl
+
+# Clear existing violation markers
+clearDrc
+
+3. Verify Geometry Again
+
+Run your geometry check again to see if the shorts disappear:
+Tcl
+
+verifyGeometry -all
+# Or if you are using newer Innovus versions:
+verify_drc
+
+If the globalNetConnect command was the culprit, your violation count should drop to 0.
 
 
-fixing - 
-<img width="692" height="429" alt="image" src="https://github.com/user-attachments/assets/62296861-4d29-4744-81a5-ba36a29231aa" />
 
-<img width="712" height="188" alt="image" src="https://github.com/user-attachments/assets/ca0b01d0-f219-4896-b570-fa27e657ebb0" />
+<img width="715" height="328" alt="image" src="https://github.com/user-attachments/assets/ad358278-93a7-4275-b33c-04573272898e" />
 
-reduced the total violations down from 423 to 121, completely wiping out all 243 SameNet spacing issues.
 
-The original explosion of DRC errors was caused by a critical floorplanning misalignment where your massive I/O pad macro cells were floating directly inside the central core area, forcing the router to illegally run normal signal traces right over their large, vertical Metal 1 (M1) pins. To fix this, we identified the exact structural instance names recognized by your active design netlist and mapped them into a customized .io assignment file. By unplacing the database and executing a fresh loadIoFile, we successfully forced Innovus to kick those bulky pads out of the standard cell logic region and snap them into a clean peripheral ring around the chip's outer boundaries. This completely opened up the routing channels in the core, leaving you with just 121 remaining M1 shorts that NanoRoute can easily clean up using an ECO route pass (setNanoRouteMode -routeWithEco true; detailRoute -fix_drc).
+<img width="289" height="373" alt="image" src="https://github.com/user-attachments/assets/d1455e05-c3d5-4a84-b7f7-344d952ac6ec" />
+
